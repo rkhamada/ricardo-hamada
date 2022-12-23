@@ -1,5 +1,6 @@
 ---
 import WebLayout from '@layouts/WebLayout.astro';
+import Bio from '@components/Bio.vue'
 ---
 <WebLayout 
     title       = "Welcome"
@@ -7,6 +8,6 @@ import WebLayout from '@layouts/WebLayout.astro';
     keywords    = "front end developer, website"
     author      = "Ricardo Hamada"
 >
-teste
+<Bio client:visible />
 </WebLayout>
 
