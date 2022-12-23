@@ -1,6 +1,5 @@
 <template>
     <div class="w-full h-screen text-white relative">
-        <button @click="GetAge( )">TESTE</button>
         <div class="fixed top-[60%] sm:top-[60%] md:top-[60%] lg:top-[65%] xl:top-[72%] 2xl:top-[78%] left-[28%] sm:left-[35%]">
             <div @mouseover="isOpen=true" @mouseleave="isOpen=false" class="hidden md:flex animate-bounce transition-all hover:bg-orange-100 bg-gray-200 md:w-14 md:h-14 flex-col justify-center items-center rounded-full">
                 <img src="/icons/double-arrow-dot-orange.svg" alt="arrow icon" class="h-5 rotate-90 pl-1">
@@ -36,14 +35,15 @@ export default
         return {
             isOpen: false,
             age: 0,
-            dob: new Date ( 1989, 4, 10 )
+            
         }
     },
     methods:
     {
         GetAge (  )
         {
-            let diff = Date.now ( ) - this.dob.getTime ( )
+            let dob = new Date ( 1989, 4, 10 )
+            let diff = Date.now ( ) - dob.getTime ( )
             this.age = new Date ( diff )
             this.age = Math.abs( this.age.getUTCFullYear( ) - 1970 )
         }
