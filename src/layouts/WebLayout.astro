@@ -1,0 +1,35 @@
+---
+import WebLayout from "@layouts/WebLayout.vue";
+import Header from "@components/common/Header.vue";
+import Navbar from "@components/common/Navbar.vue";
+import Footer from "@components/common/Footer.vue";
+
+const { title, description, keywords, author, pageIndex } = Astro.props; 
+---
+
+<Header 
+    title       = { title }
+    description = { description }
+    keywords    = { keywords }
+    author      = { author }
+>
+
+    <!-- Google Analytics -->
+    <!-- <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-W81H70Y058"></script> -->
+    <!-- <script is:inline src="/scripts/js/g-analytics.js"></script> -->
+
+    <!-- JS Utils  -->
+    <!-- <script is:inline src="/scripts/js/get-params.js" type="text/javascript"></script> -->
+
+</Header>
+<WebLayout >
+    <header class="relative z-[99999] top-0">
+        <Navbar  
+            client:visible
+        />
+    </header>
+    <slot id="main-content" />
+    <Footer client:visible />
+</WebLayout>
+
+
